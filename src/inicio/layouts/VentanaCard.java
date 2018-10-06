@@ -3,14 +3,14 @@ package inicio.layouts;
 import javax.swing.*;
 import java.awt.*;
 
-public class Ventana extends JFrame {
+public class VentanaCard extends JFrame {
 
     JPanel pCentral, pSur, pUno, pDos, pTres, pCuatro;
     JButton boton1, boton2, boton3, boton4;
     Container container;
     CardLayout cardLayout;
 
-    public Ventana() throws HeadlessException {
+    public VentanaCard() throws HeadlessException {
         instancias();
         initGUI();
         acciones();

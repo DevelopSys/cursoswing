@@ -46,6 +46,10 @@ public class VentanaCard extends JFrame implements ActionListener {
 
     private void initGUI() {
 
+        //deshabilitar un boton
+        boton4.setEnabled(false);
+        // poner un tooltip al elemento
+        boton4.setToolTipText("Esto es un ejemplo de tooltip");
         container.add(configPanelSur(),BorderLayout.SOUTH);
         container.add(configPanelCentral(),BorderLayout.CENTER);
         setVisible(true);
@@ -71,6 +75,8 @@ public class VentanaCard extends JFrame implements ActionListener {
         pCentral.add(pCuatro,"panel4");
         //((CardLayout)pCentral.getLayout())
         cardLayout.show(pCentral,"panel4");
+        cardLayout.setHgap(20);
+        cardLayout.setVgap(20);
         return pCentral;
     }
 
@@ -78,13 +84,25 @@ public class VentanaCard extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String tag = null;
         if (e.getSource() == boton1){
-            tag = "panel1";
+            //tag = "panel1";
+            // mostar panel anterior
+            // cardLayout.previous(pCentral);
+            // evaluar si un panel está mostrandose
+            System.out.println(pUno.isShowing());
         } else if (e.getSource() == boton2){
-            tag = "panel2";
+            //tag = "panel2";
+            // mostar panel siguiente
+            // cardLayout.next(pCentral);
+            // evaluar si un panel está mostrandose
+            System.out.println(pCuatro.isShowing());
+
         } else if (e.getSource() == boton3){
             tag = "panel3";
+            cardLayout.first(pCentral);
         } else if (e.getSource() == boton4){
             tag = "panel4";
+            cardLayout.last(pCentral);
+
         }
         cardLayout.show(pCentral,tag);
     }

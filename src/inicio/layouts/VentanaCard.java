@@ -83,18 +83,25 @@ public class VentanaCard extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String tag = null;
-        if (e.getSource() == boton1){
+        Component[] components = pCentral.getComponents();
+        if (e.getSource() == boton1) {
             //tag = "panel1";
             // mostar panel anterior
             // cardLayout.previous(pCentral);
             // evaluar si un panel está mostrandose
             System.out.println(pUno.isShowing());
-        } else if (e.getSource() == boton2){
+            JPanel panel = (JPanel) components[0];
+            panel.isShowing();
+        }
+         else if (e.getSource() == boton2){
             //tag = "panel2";
             // mostar panel siguiente
             // cardLayout.next(pCentral);
             // evaluar si un panel está mostrandose
             System.out.println(pCuatro.isShowing());
+            JPanel panel = (JPanel) components[components.length-1];
+            panel.isShowing();
+            panel.getClass().getSimpleName();
 
         } else if (e.getSource() == boton3){
             tag = "panel3";

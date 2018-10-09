@@ -2,8 +2,10 @@ package inicio.layouts;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class VentanaCard extends JFrame {
+public class VentanaCard extends JFrame implements ActionListener {
 
     JPanel pCentral, pSur, pUno, pDos, pTres, pCuatro;
     JButton boton1, boton2, boton3, boton4;
@@ -17,7 +19,10 @@ public class VentanaCard extends JFrame {
     }
 
     private void acciones() {
-
+        Component[] components = pSur.getComponents();
+        for (Component c:components) {
+            ((JButton)c).addActionListener(this);
+        }
     }
 
     private void instancias() {
@@ -67,5 +72,20 @@ public class VentanaCard extends JFrame {
         //((CardLayout)pCentral.getLayout())
         cardLayout.show(pCentral,"panel4");
         return pCentral;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String tag = null;
+        if (e.getSource() == boton1){
+            tag = "panel1";
+        } else if (e.getSource() == boton2){
+            tag = "panel2";
+        } else if (e.getSource() == boton3){
+            tag = "panel3";
+        } else if (e.getSource() == boton4){
+            tag = "panel4";
+        }
+        cardLayout.show(pCentral,tag);
     }
 }

@@ -25,6 +25,7 @@ public class VentanaGridFlowBorder extends JFrame {
 
     private void initGUI() {
 
+        container.setLayout(new BorderLayout());
         container.add(configurarCentro(),BorderLayout.CENTER);
         container.add(configurarArriba(),BorderLayout.NORTH);
         container.add(configurarDerecha(),BorderLayout.EAST);
@@ -73,6 +74,15 @@ public class VentanaGridFlowBorder extends JFrame {
         pIzquierda.add(b2);
         pIzquierda.add(b3);
         pIzquierda.add(b4);
+
+
+        pIzquierda.setLayout(new FlowLayout());
+        ((FlowLayout)pIzquierda.getLayout()).setAlignment(FlowLayout.CENTER);
+        ((FlowLayout)pIzquierda.getLayout()).setHgap(20);
+        ((FlowLayout)pIzquierda.getLayout()).setVgap(20);
+
+
+
         return pIzquierda;
     }
     private JComponent configurarAbajo() {

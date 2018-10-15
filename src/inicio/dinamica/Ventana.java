@@ -37,8 +37,11 @@ public class Ventana extends JFrame implements ActionListener {
         pCentro.setLayout(new BoxLayout(pCentro,BoxLayout.X_AXIS));
         pCentroUno = new JPanel();
         pCentroUno.setBackground(Color.BLUE);
+        //pCentroUno.setPreferredSize(new Dimension(300,600));
         pCentroDos = new JPanel();
         pCentroDos.setBackground(Color.YELLOW);
+        //pCentroDos.setMinimumSize(new Dimension(pCentroUno.getWidth()*2,pCentroUno.getHeight()));
+        pCentroDos.setPreferredSize(new Dimension(400,400));
 
     }
 
@@ -71,6 +74,7 @@ public class Ventana extends JFrame implements ActionListener {
 
             if (pCentro.getComponents().length>1){
                 pCentro.remove(pCentroDos);
+
                 pack();
             }
         } else if (e.getSource() == b2) {

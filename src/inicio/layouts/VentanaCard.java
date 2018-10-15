@@ -21,7 +21,9 @@ public class VentanaCard extends JFrame implements ActionListener {
     private void acciones() {
         Component[] components = pSur.getComponents();
         for (Component c:components) {
-            ((JButton)c).addActionListener(this);
+            if (c.getClass()==JButton.class) {
+                ((JButton) c).addActionListener(this);
+            }
         }
     }
 

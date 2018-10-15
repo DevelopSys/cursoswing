@@ -8,8 +8,9 @@ public class Entrada {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                VentanaCard v = new VentanaCard();
+                //VentanaCard v = new VentanaCard();
                 //VentanaGridFlowBorder v = new VentanaGridFlowBorder();
+                VentanaBox v = new VentanaBox();
             }
         });
     }

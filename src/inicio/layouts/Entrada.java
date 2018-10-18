@@ -10,7 +10,10 @@ public class Entrada {
             public void run() {
                 //VentanaCard v = new VentanaCard();
                 //VentanaGridFlowBorder v = new VentanaGridFlowBorder();
-                VentanaBox v = new VentanaBox();
+                //VentanaBox v = new VentanaBox();
+                //GridBagVentana v = new GridBagVentana();
+
+                GridBagEjemplo v = new GridBagEjemplo();
             }
         });
     }

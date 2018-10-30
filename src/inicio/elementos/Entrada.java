@@ -8,7 +8,7 @@ public class Entrada {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                Ventana v = new Ventana();
+                VentanaLista v = new VentanaLista();
             }
         });
     }
